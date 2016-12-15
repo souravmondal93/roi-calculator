@@ -23,10 +23,18 @@
         vm.roi = 0;
 
         vm.calculateROI = calculateROI;
+        vm.clearInputs = clearInputs;
 
         function calculateROI() {
             return (vm.customers * vm.transactionValue * vm.stores * vm.factors.activeUserFactor *
                 vm.factors.conversionFactor * (1 - vm.factors.discountFactor) * vm.factors.campaignsPerMonth);
+        }
+
+        function clearInputs() {
+            vm.customers = 0;
+            vm.transactionValue = 0;
+            vm.visitorsPerMonth = 0;
+            vm.stores = 0;
         }
 
         $log.info('ROI Controller');

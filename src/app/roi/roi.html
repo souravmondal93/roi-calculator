@@ -21,14 +21,16 @@
                         <label>Average visits per month by a customer</label>
                         <input ng-model="roi.visitorsPerMonth" ng-model-options="{ debounce: 300 }">
                     </md-input-container>
-                    <md-input-container>
-                        <label>Number of stores</label>
-                        <input ng-model="roi.stores" ng-model-options="{ debounce: 300 }">
-                    </md-input-container>
+                    <md-slider-container>
+                        <span>Number of Stores</span>
+                        <md-slider flex min="0" max="100" ng-model="roi.stores"></md-slider>
+                        <md-input-container>
+                            <span flex>{{roi.stores}}</span>
+                        </md-input-container>
+                    </md-slider-container>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="end center">
-                    <md-button class="md-raised md-warn">Cancel</md-button>
-                    <md-button class="md-raised md-primary">Calculate</md-button>
+                    <md-button class="md-raised md-warn" ng-click="roi.clearInputs()">Clear</md-button>
                 </md-card-actions>
             </md-card>
             <md-card flex>
