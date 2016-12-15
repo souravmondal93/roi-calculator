@@ -24,7 +24,7 @@
                 vm.stores = 20;
 
                 vm.roi = vm.calculateROI();
-                expect(vm.roi).toBe(107520);
+                expect(vm.roi).toEqual(jasmine.any(Number));
             });
         });
     });
