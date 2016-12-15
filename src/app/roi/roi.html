@@ -1,0 +1,42 @@
+<div layout="vertical" layout-fill>
+    <md-content layout-fill>
+        <header>
+            <new-navbar></new-navbar>
+        </header>
+
+        <div layout="row">
+            <md-card flex>
+                <md-card-content>
+                    <h3 class="md-title">ROI Calculator</h3>
+                    <p class="ng-binding">Calculate your ROI by entering the following inputs</p>
+                    <md-input-container>
+                        <label>Number of Customers</label>
+                        <input>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Average Transaction value (in &euro;)</label>
+                        <input>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Average visits per month by a customer</label>
+                        <input>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Number of stores</label>
+                        <input>
+                    </md-input-container>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="md-raised md-warn">Cancel</md-button>
+                    <md-button class="md-raised md-primary">Calculate</md-button>
+                </md-card-actions>
+            </md-card>
+            <md-card flex>
+                <md-card-content>
+                    <h1>&euro;107520</h1>
+                    <h3 class="md-title">For 8000 customers, your ROI will be &euro;107520</h3>
+                </md-card-content>
+            </md-card>
+        </div>
+    </md-content>
+</div>
