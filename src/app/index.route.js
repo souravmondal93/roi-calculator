@@ -16,7 +16,7 @@
             })
 
             .state('roi', {
-                url: '/',
+                url: '/?customers',
                 templateUrl: 'app/roi/roi.html',
                 controller: 'RoiController',
                 controllerAs: 'roi'

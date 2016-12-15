@@ -6,7 +6,7 @@
         .controller('RoiController', RoiController);
 
     /** @ngInject */
-    function RoiController($log, $scope) {
+    function RoiController($log, $scope, $stateParams) {
         var vm = this;
 
         vm.factors = {
@@ -25,6 +25,9 @@
         vm.calculateROI = calculateROI;
         vm.clearInputs = clearInputs;
 
+        if($stateParams.customers)
+            vm.customers = $stateParams.customers;
+
         function calculateROI() {
             return (vm.customers * vm.transactionValue * vm.stores * vm.factors.activeUserFactor *
                 vm.factors.conversionFactor * (1 - vm.factors.discountFactor) * vm.factors.campaignsPerMonth);
@@ -37,7 +40,7 @@
             vm.stores = 0;
         }
 
-        $log.info('ROI Controller');
+        $log.info('ROI Controller', $stateParams);
 
         $scope.$watchGroup([
             function () {
