@@ -11,19 +11,19 @@
                     <p class="ng-binding">Calculate your ROI by entering the following inputs</p>
                     <md-input-container>
                         <label>Number of Customers</label>
-                        <input>
+                        <input ng-model="roi.customers" ng-model-options="{ debounce: 300 }">
                     </md-input-container>
                     <md-input-container>
                         <label>Average Transaction value (in &euro;)</label>
-                        <input>
+                        <input ng-model="roi.transactionValue" ng-model-options="{ debounce: 300 }">
                     </md-input-container>
                     <md-input-container>
                         <label>Average visits per month by a customer</label>
-                        <input>
+                        <input ng-model="roi.visitorsPerMonth" ng-model-options="{ debounce: 300 }">
                     </md-input-container>
                     <md-input-container>
                         <label>Number of stores</label>
-                        <input>
+                        <input ng-model="roi.stores" ng-model-options="{ debounce: 300 }">
                     </md-input-container>
                 </md-card-content>
                 <md-card-actions layout="row" layout-align="end center">
@@ -33,8 +33,8 @@
             </md-card>
             <md-card flex>
                 <md-card-content>
-                    <h1>&euro;107520</h1>
-                    <h3 class="md-title">For 8000 customers, your ROI will be &euro;107520</h3>
+                    <h1>&euro;{{roi.roi}}</h1>
+                    <h3 class="md-title">For {{roi.customers}} customers, your ROI will be &euro;{{roi.roi}}</h3>
                 </md-card-content>
             </md-card>
         </div>
